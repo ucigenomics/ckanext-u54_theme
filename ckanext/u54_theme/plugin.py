@@ -2,6 +2,7 @@ import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 pconfig = toolkit.config
 from ckan.common import config
+from ckan.lib.app_globals import set_app_global
 import ckan.logic as logic
 import ckan.lib.helpers as h
 from datetime import datetime
