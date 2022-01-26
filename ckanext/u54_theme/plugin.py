@@ -2,15 +2,12 @@ import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 pconfig = toolkit.config
 from ckan.common import config
-from ckan.lib.app_globals import set_app_global
-from ckan.lib.plugins import DefaultTranslation
 import ckan.logic as logic
 import ckan.lib.helpers as h
 from datetime import datetime
 
 
-class U54ThemePlugin(plugins.SingletonPlugin, DefaultTranslation):
-    plugins.implements(plugins.ITranslation)
+class U54ThemePlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.ITemplateHelpers)
 
@@ -30,9 +27,7 @@ class U54ThemePlugin(plugins.SingletonPlugin, DefaultTranslation):
             'u54_theme_get_showcase_number': u54_theme_get_showcase_number,
             'u54_theme_get_popular_datasets': lambda: logic.get_action('package_search')({}, {"rows": 4, 'sort': 'views_total desc'})['results'],
             'u54_theme_display_date': u54_theme_display_date,
-            'u54_theme_get_map': u54_theme_get_map,
             'u54_theme_get_groups': lambda: logic.get_action('group_list')({}, {"all_fields": True}),
-            'u54_theme_spatial_installed': lambda: config.get('ckanext.u54_theme.spatial_installed', 'False'),
             'u54_theme_osmnames_key': lambda: config.get('ckanext.u54_theme.osmnames_key', '')
         }
 
@@ -47,16 +42,3 @@ def u54_theme_get_resource_number():
 
 def u54_theme_get_showcase_number():
     return len(logic.get_action('ckanext_showcase_list')({}, {}))
-
-
-def u54_theme_get_map(view_id, resource_id, package_id):
-    resource_view = None
-    try:
-        resource_view = logic.get_action('resource_view_show')({}, {'id': view_id})
-    except ():
-        return 'View not found'
-
-    resource = logic.get_action('resource_show')({}, {'id': resource_id})
-    package = logic.get_action('package_show')({}, {'id': package_id})
-
-    return h.rendered_resource_view(resource_view, resource, package, True)
