@@ -7,7 +7,7 @@
         <div class="col-md-3 col-xs-6 text-center">
             <div class="stats__card bg-blue">
                 <span class="text-big numbers">{{ h.SI_number_span(stats.dataset_count) }}</span>
-                <li><a href="{{ h.url_for(dataset.search) }}"><h2 class="titlecase numbers__title">{{ _('dataset') if stats.dataset_count == 1 else _('datasets') }}</h2></a></li>
+                <li><a href="/dataset"><h2 class="titlecase numbers__title">{{ _('dataset') if stats.dataset_count == 1 else _('datasets') }}</h2></a></li>
             </div>
         </div>
         <div class="col-md-3 col-xs-6 text-center">
@@ -19,13 +19,13 @@
         <div class="col-md-3 col-xs-6 text-center">
             <div class="stats__card bg-orange">
                 <span class="text-big numbers">{{ h.SI_number_span(stats.organization_count) }}</span>
-                <li><a href="{{ h.url_for(group.index) }}"><h2 class="titlecase numbers__title">Organizations</h2></a></li>
+                <li><a href="/organization"><h2 class="titlecase numbers__title">Organizations</h2></a></li>
             </div>
         </div>
         <div class="col-md-3 col-xs-6 text-center">
             <div class="stats__card bg-purple">
                 <span class="text-big numbers">{% if showcase_number %}{{ showcase_number }}{% else %} {{ 0}} {% endif%}</span>
-                <li><a href="{{ h.url_for(showcase_blueprint.index) }}"><h2 class="titlecase numbers__title">Showcase</h2></a></li>
+                <li><a href="/showcase"><h2 class="titlecase numbers__title">Showcase</h2></a></li>
             </div>
         </div>
     </div>
