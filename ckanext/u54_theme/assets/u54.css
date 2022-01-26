@@ -175,7 +175,7 @@ section.tags a.tag:hover {
   color: #00a6ff;
 }
 .text-green {
-  color: #f6ff00;
+  color: #00ff00;
 }
 
 .text-medgrey {
@@ -200,7 +200,7 @@ section.tags a.tag:hover {
   background: #00a6ff;
 }
 .bg-green {
-  background: #f6ff00;
+  background: #00ff00;
 }
 .bg-yellow {
   background: #f6ff00;
@@ -1061,10 +1061,10 @@ ul.dataset-list.unstyled > li {
 /* DATASET BLOCK END */
 
 
-/* FOOTER */
+/* FOOTER #C14531*/
 
 footer.footer {
-  background-color: #6e428e;
+  background-color: #c14531;
   color: #FFF;
   width: 100%;
   line-height: 40px;
@@ -1108,7 +1108,7 @@ footer.footer > a {
   height: 30px;    
   width: 100px;
   display: block;
-  background: url('/images/ui/Social_Media/logo-blanc.svg') no-repeat;
+  background: url('/img/logo.svg') no-repeat;
   margin: 0px!important;
 }
 
