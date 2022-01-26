@@ -1,0 +1,49 @@
+{% set current_lang = request.environ.CKAN_LANG %}
+{% set current_page = request.environ.CKAN_CURRENT_URL %}
+{# % set categories = h.u54_theme_get_groups() % #}
+
+<div class="categories container-fluid categories__row">
+        <div class="container ">
+            <div class="row ">
+
+                <div class="col-md-2 col-sm-4 col-xs-6">
+                    <a class="categories__card" href="/group/project_1">
+                        <img src="/images/ui/project1.svg" alt="" class="responsive categories__card-img">
+                        <span class="categories__card-title text-purple">Project<br /> 1</span>
+                    </a>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-6">
+                    <a class="categories__card" href="/group/project_2">
+                        <img src="/images/ui/project2.svg" alt="" class="responsive categories__card-img">
+                        <span class="categories__card-title text-blue">Project<br /> 2</span>
+                    </a>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-6">
+                    <a class="categories__card" href="/group/project_3">
+                        <img src="/images/ui/project3.svg" alt="" class="responsive categories__card-img">
+                        <span class="categories__card-title text-orange">Project<br /> 3</span>
+                    </a>
+                </div> 
+                <div class="col-md-2 col-sm-4 col-xs-6">
+                    <a class="categories__card" href="/group/opportunity-awards">
+                        <img src="/images/ui/opportunityawards.svg" alt="" class="responsive categories__card-img">
+                        <span class="categories__card-title text-purple">Opportunity<br /> Awards</span>
+                    </a>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-6">
+                    <a class="categories__card" href="/group/pilot-awards">
+                        <img src="/images/ui/pilotawards.svg" alt="" class="responsive categories__card-img">
+                        <span class="categories__card-title text-blue">Pilot<br /> Awards</span>
+                    </a>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-6">
+                    <a class="categories__card" href="/group/outreach">
+                        <img src="/images/ui/EDUCATION_NOIR.svg" alt="" class="responsive categories__card-img">
+                        <span class="categories__card-title text-green">Education<br /> Outreach</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+  

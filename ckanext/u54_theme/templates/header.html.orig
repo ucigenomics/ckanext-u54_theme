@@ -1,0 +1,110 @@
+{% set current_lang = request.environ.CKAN_LANG %}
+{% set current_page = request.environ.CKAN_CURRENT_URL %}
+
+<div id="toggle-container" class="">
+            <button id="toggle-toc" class="btn btn-pink visible-xs-inline-block" data-toggle="dropdown" type="button">
+                <i class="fa fa-bars"></i>
+            </button>            
+            <ul class="dropdown-menu">
+                <li  {#% if current_page.endswith('') %} class='active' {% endif %#}><a href="{{ h.url_for('home.index') }}">Home</a></li>
+                <li  {% if current_page.startswith('/about') %} class='active' {% endif %}><a href="{{ h.url_for(home.about) }}">
+                                About</a></li>
+                <li {% if current_page.startswith('/dataset') %} class='active' {% endif %}><a href="{{ h.url_for(dataset.search) }}">Datasets</a></li>
+                <li {% if current_page.startswith('/organization') %} class='active' {% endif %}><a href="{{ h.url_for(organization.index) }}">Organizations</a></li>
+                <li {% if current_page.startswith('/groups') %} class='active' {% endif %}><a href="{{ h.url_for(group.index) }}">Groups</a></li>
+                <li {% if current_page.startswith('/datarequest') %} class='active' {% endif %}><a href="{{ h.url_for(datarequests.index) }}">Data Request</a></li>
+                <li {% if current_page.startswith('/showcase') %} class='active' {% endif %}><a href="{{ h.url_for(showcase_blueprint.index) }}">Showcase</a></li>
+                {% if c.userobj %}
+                <li class="divider"></li>
+                <li {% if current_page.startswith('/dashboard') %} class='active' {% endif %}><a href="{{ h.url_for('dashboard.index') }}">Dashboard</a></li>
+                {% endif %}
+            </ul>
+            <a href="{{ h.url_for('home.index') }}">
+                <img src="{{ h.url_for_static_or_external(g.site_logo) }}" class="logo-mobile" alt="Home">
+            </a>
+            {% if c.userobj %}
+            <a class="btn visible-xs-inline-block pull-right" href="{{ h.url_for('/user/slo') }}"><i class="fa fa-sign-out"></i></a>
+            {% else %}
+            <a class="btn visible-xs-inline-block pull-right" href="{{ g.u54_portal_url }}/my?ui_locales={{current_lang}}"><i class="fa fa-sign-in"></i></a>
+            {% endif %}
+</div>
+
+<nav id="off-nav">
+    <ul class="nav">
+        <li>
+            <a class="logo" href="{{ h.url_for('home.index') }}"><img src="/img/logo-h43.png" alt="Home"></a>
+        </li>
+        <li class="divider first"></li>
+        <li>
+            <a class="nav-apps" href="{{ g.u54_portal_url }}/store?ui_locales={{current_lang}}">Catalog</a>
+        </li>
+        {% if c.userobj %}
+        <li class="deeper dropdown parent">
+            <a class="nav-data" href="#">Data</a>
+            <ul class="nav">
+                <li {% if current_page.startswith('/dataset') %} class='active' {% endif %}><a href="{{ h.url_for(dataset.search) }}">Datasets</a></li>
+                <li {% if current_page.startswith('/organization') %} class='active' {% endif %}><a href="{{ h.url_for(organization.index) }}">Organizations</a></li>
+                <li {% if current_page.startswith('/dashboard') %} class='active' {% endif %}><a href="{{ h.url_for('dashboard.index') }}">Dashboard</a></li>
+            </ul>
+            {% else %}
+        <li class="active deeper dropdown parent">
+            <a class="dropdown-toggle nav-data" href="/">Data</a>
+            {% endif %}
+        </li>
+        <li class="divider"></li>
+        <li>
+            {% if c.userobj %}
+            <a href="{{ h.url_for('/user/slo') }}"><i class="fa fa-sign-out"></i> Log out</a>
+            {% else %}
+            <a href="{{ g.u54_portal_url }}/my?ui_locales={{current_lang}}"><i class="fa fa-sign-in"></i> Log in</a>
+            {% endif %}
+        </li>
+        
+    </ul>
+</nav>
+
+<nav id="t3-mainnav" class="wrap navbar navbar-default t3-mainnav navbar-fixed-top">
+    <div class="container">
+        <div class="t3-navbar">
+            <div class="col-xs-8 menu text-center">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="{{ h.url_for('home.index') }}" class="logo">
+                            <img src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="Home">
+                        </a>
+                    </li>
+                    <li  {% if current_page.endswith('') %} class='active' {% endif %}><a href="{{ h.url_for('home.index') }}">Home</a></li>
+                    <li  {% if current_page.startswith('/about') %} class='active' {% endif %}><a href="{{ h.url_for('home.about') }}">
+                        About</a></li>
+                    <li class="item-119 deeper dropdown parent">
+                        <a class="dropdown-toggle nav-data" href="#" data-toggle="dropdown">Data
+                            <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li {% if current_page.startswith('/dataset') %} class='active' {% endif %}><a href="{{ h.url_for(dataset.search) }}">Datasets</a></li>
+                            <li {% if current_page.startswith('/organization') %} class='active' {% endif %}><a href="{{ h.url_for(organization.index) }}">Organizations</a></li>
+                            <li {% if current_page.startswith('/group') %} class='active' {% endif %}><a href="{{ h.url_for(group.index) }}">Groups</a></li>
+                            <li {% if current_page.startswith('/datarequest') %} class='active' {% endif %}><a href="{{ h.url_for(datarequests.index) }}">Data Requests</a></li>
+                            <li {% if current_page.startswith('/showcase') %} class='active' {% endif %}><a href="{{ h.url_for(showcase_blueprint.index) }}">Showcase</a></li>
+                        </ul>
+                    </li>
+
+                    {% if c.userobj %}
+                    <li {% if current_page.startswith('/dashboard') %} class='active' {% endif %}><a href="{{ h.url_for('dashboard.index') }}">Dashboard</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="col-xs-4">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="item-123">
+                        {% if c.userobj %}
+                        <a class="btn btn-pink navbar-btn" href="{{ h.url_for('/user/slo') }}">Log out</a>
+                        {% else %}
+                        <a class="btn navbar-btn btn-pink" href="{{ g.u54_portal_url }}/my?ui_locales={{current_lang}}">
+                            Log in</a>
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

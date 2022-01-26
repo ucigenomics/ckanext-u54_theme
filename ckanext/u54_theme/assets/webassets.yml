@@ -1,0 +1,19 @@
+u54-css:
+  output: ckanext-u54-theme/%(version)s_u54.css
+  contents:
+    - u54.css
+
+u54:
+  output: ckanext-u54-theme/%(version)s_u54.js
+  extra:
+    preload:
+      - base/main
+      - base/ckan
+      - ckanext-u54-theme/u54-css
+  contents:
+    - u54.js
+    - particles-loading.js
+
+# unused :
+#jquery-ui.js theme_location.js off-canvas.js responsive.css
+

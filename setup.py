@@ -9,22 +9,22 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='''ckanext-ozwillo-theme''',
+    name='''ckanext-u54-theme''',
 
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # http://packaging.python.org/en/latest/tutorial.html#version
     version='1.0.0',
 
-    description='''Ozwillo theme for CKAN''',
+    description='''U54 portal theme for CKAN''',
     long_description=long_description,
 
     # The project's main homepage.
-    url='https://github.com/ozwillo/ckanext-ozwillo-theme',
+    url='https://github.com/ozwillo/ckanext-u54-theme',
 
     # Author details
-    author='''Ozwillo''',
-    author_email='''contact@ozwillo.org''',
+    author='''Ivan''',
+    author_email='''iychang@uci.edu''',
 
     # Choose your license
     license='AGPL',
@@ -35,7 +35,7 @@ setup(
         # 3 - Alpha
         # 4 - Beta
         # 5 - Production/Stable
-        'Development Status :: 5 - Production/Stable',
+        'Development Status :: 4 - Beta',
 
         # Pick your license as you wish (should match "license" above)
         'License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)',
@@ -48,7 +48,7 @@ setup(
 
 
     # What does your project relate to?
-    keywords='''CKAN Ozwillo''',
+    keywords='''CKAN U54''',
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
@@ -78,7 +78,7 @@ setup(
     # pip to create the appropriate form of executable for the target platform.
     entry_points='''
         [ckan.plugins]
-        ozwillo_theme=ckanext.ozwillo_theme.plugin:OzwilloThemePlugin
+        u54_theme=ckanext.u54_theme.plugin:U54ThemePlugin
         [babel.extractors]
         ckan = ckan.lib.extract:extract_ckan
     ''',
