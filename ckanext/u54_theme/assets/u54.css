@@ -171,6 +171,12 @@ section.tags a.tag:hover {
 .text-purple {
   color: #6e428e;
 }
+.text-blue {
+  color: #00a6ff;
+}
+.text-green {
+  color: #f6ff00;
+}
 
 .text-medgrey {
   color: #666;
@@ -189,6 +195,15 @@ section.tags a.tag:hover {
 
 .bg-orange {
   background: #ff9933;
+}
+.bg-blue {
+  background: #00a6ff;
+}
+.bg-green {
+  background: #f6ff00;
+}
+.bg-yellow {
+  background: #f6ff00;
 }
 
 .bg-purple {

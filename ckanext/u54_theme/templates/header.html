@@ -1,23 +1,17 @@
 {% ckan_extends %}
 
-{% set ckan_29_or_higher = h.ckan_version().split('.')[1] | int >= 9 %}
-
-{% set search_route = 'dataset.search' if ckan_29_or_higher else 'search' %}
-{% set org_route = 'organization.index' if ckan_29_or_higher else 'organizations_index' %}
-{% set group_route = 'group.index' if ckan_29_or_higher else 'group_index' %}
-{% set showcase_route = 'showcase_blueprint.index' if ckan_29_or_higher else 'showcase_index' %}
-{% set datarequests_route = 'datarequests.index' if ckan_29_or_higher else 'datarequests_index' %}
-
-{% set about_route = 'home.about' if ckan_29_or_higher else 'about' %}
-
-
 {% block header_site_navigation_tabs %}
+  {% set org_type = h.default_group_type('organization') %}
+  {% set group_type = h.default_group_type('group') %}
+
+
   {{ h.build_nav_main(
-    (search_route, _('Datasets')),
-    (org_route, _('Organizations')),
-    (group_route, _('Groups')),
-    (showcase_route, _('Showcases')),
-    (datarequests_route, _('Data Requests') + h.get_open_datarequests_badge()),
-    (about_route, _('About'))
+    (dataset_type ~ '.search', h.humanize_entity_type('package', dataset_type, 'main nav') or _('Datasets'), ["dataset", "resource"]),
+    (org_type ~ '.index', h.humanize_entity_type('organization', org_type, 'main nav') or _('Organizations'), ['organization']),
+    (group_type ~ '.index', h.humanize_entity_type('group_type', group_type, 'main nav') or _('Groups'), ['group']),
+    ('showcase_blueprint.index', _('Showcases')),
+    ('datarequests_index', _('Data Requests') + h.get_open_datarequests_badge()),
+    ('home.about', _('About')) 
   ) }}
+
 {% endblock %}
