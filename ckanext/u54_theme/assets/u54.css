@@ -1734,6 +1734,7 @@ li.media-item {
 /* Bugfixes */
 .wrapper:before {
   border:0 !important;
+  z-index: 0;
 }
 
 [role=main] .secondary {
