@@ -4,37 +4,33 @@
 
 <div class="stats container-fluid">
     <div class="container stats__row">
+	<a href="/dataset">
         <div class="col-md-3 col-xs-6 text-center">
-  	    <a href="/dataset">
             <div class="stats__card bg-blue">
                 <span class="text-big numbers">{{ h.SI_number_span(stats.dataset_count) }}</span>
                 <h2 class="titlecase numbers__title">{{ _('dataset') if stats.dataset_count == 1 else _('datasets') }}</h2>
             </div>
-	    </a>
-        </div>
+        </div></a>
+	<a href="/dataset">
         <div class="col-md-3 col-xs-6 text-center">
-	    <a href="/dataset">
-            <div class="stats__card bg-yellow">
+            <div class="stats__card bg-green">
                 <span class="text-big numbers">{% if resource_number %}{{ resource_number }}{% else %} {{ 0}} {% endif%}</span>
                 <h2 class="titlecase numbers__title">{{ _('resources') }}</h2>
             </div>
-	    </a>
-        </div>
+        </div></a>
+   	<a href="/organization">
         <div class="col-md-3 col-xs-6 text-center">
-   	    <a href="/organization">
             <div class="stats__card bg-orange">
                 <span class="text-big numbers">{{ h.SI_number_span(stats.organization_count) }}</span>
                 <h2 class="titlecase numbers__title">Organizations</h2>
             </div>
-	    </a>
-        </div>
+        </div></a>
+	<a href="/showcase">
         <div class="col-md-3 col-xs-6 text-center">
-	    <a href="/showcase">
             <div class="stats__card bg-purple">
                 <span class="text-big numbers">{% if showcase_number %}{{ showcase_number }}{% else %} {{ 0}} {% endif%}</span>
                 <h2 class="titlecase numbers__title">Showcase</h2>
             </div>
-	    </a>
-        </div>
+        </div></a>
     </div>
 </div>
