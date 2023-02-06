@@ -9,7 +9,7 @@ u54:
     preload:
       - base/main
       - base/ckan
-      - ckanext-u54_theme/u54-css
+      - ckanext-u54_theme/u54_css
   contents:
     - u54.js
     - particles-loading.js
