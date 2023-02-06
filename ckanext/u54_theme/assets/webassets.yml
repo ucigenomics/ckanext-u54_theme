@@ -1,15 +1,15 @@
-u54-css:
-  output: ckanext-u54-theme/%(version)s_u54.css
+u54_css:
+  output: ckanext-u54_theme/%(version)s_u54.css
   contents:
     - u54.css
 
 u54:
-  output: ckanext-u54-theme/%(version)s_u54.js
+  output: ckanext-u54_theme/%(version)s_u54.js
   extra:
     preload:
       - base/main
       - base/ckan
-      - ckanext-u54-theme/u54-css
+      - ckanext-u54_theme/u54-css
   contents:
     - u54.js
     - particles-loading.js
