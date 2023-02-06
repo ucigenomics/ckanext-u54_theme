@@ -1,5 +1,5 @@
 ------------------------
-ckanext-u54-theme
+ckanext-u54_theme
 ------------------------
 
 Requirements
@@ -21,10 +21,10 @@ The following configuration variables must be set:
 Development Installation
 ========================
 
-To install ckanext-u54-theme for development, activate your CKAN
+To install ckanext-u54_theme for development, activate your CKAN
 virtualenv and do:
 
-    git clone https://github.com/rarsenal/ckanext-u54-theme.git
-    cd ckanext-u54-theme
+    git clone https://github.com/rarsenal/ckanext-u54_theme.git
+    cd ckanext-u54_theme
     python setup.py develop
     pip install -r dev-requirements.txt
