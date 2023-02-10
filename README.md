@@ -1,5 +1,6 @@
 ------------------------
 ckanext-u54_theme
+based on ckanext-ozwillo-theme
 ------------------------
 
 Requirements
