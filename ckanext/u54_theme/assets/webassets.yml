@@ -1,8 +1,21 @@
 u54_css:
+  filters: cssrewrite
   output: ckanext-u54_theme/%(version)s_u54.css
   contents:
-    - u54.css
+    - u54_theme.css
 
+u54_js:
+  filter: rjsmin
+  output: ckanext-u54_theme/%(version)s_54.js
+  extra:
+    preload:
+      - base/main
+      - base/ckan
+      - ckanext-u54_theme/u54_css
+    contents:
+      - u54.js
+      - particles-loading.js
+      
 u54:
   output: ckanext-u54_theme/%(version)s_u54.js
   extra:
